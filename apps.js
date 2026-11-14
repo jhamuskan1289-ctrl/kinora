@@ -4,19 +4,19 @@ var KEY='kinora-v2';
 function iso(d){return d.toISOString().slice(0,10)}
 var TODAY=iso(new Date());
 const Images={
- meera:'images/meera.jpg',
- oats:'images/oats.jpg',
- arun:'images/arun.jpg',
- family:'images/family.jpg',
- fried:'images/fried.jpg',
- greens:'images/greens.jpg',
- almonds:'images/almonds.jpg',
- butter:'images/butter.jpg',
- yoga1:'images/yoga1.jpg',
- yoga2:'images/yoga2.jpg',
- yoga3:'images/yoga3.jpg',
- ramesh:'images/ramesh.jpg',
- savitri:'images/savitri.jpg'
+ meera:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=400&amp;q=80',
+ oats:'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
+ arun:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=400&amp;q=80',
+ family:'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&amp;fit=crop&amp;w=1000&amp;q=80',
+ fried:'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&amp;fit=crop&amp;w=800&amp;q=80',
+ greens:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=800&amp;q=80',
+ almonds:'https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&amp;fit=crop&amp;w=800&amp;q=80',
+ butter:'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&amp;fit=crop&amp;w=800&amp;q=80',
+ yoga1:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=800&amp;q=80',
+ yoga2:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;w=800&amp;q=80',
+ yoga3:'https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&amp;fit=crop&amp;w=800&amp;q=80',
+ ramesh:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=400&amp;q=80',
+ savitri:'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&amp;fit=crop&amp;w=400&amp;q=80'
 };
 
 /* ---------- icons ---------- */
@@ -45,7 +45,7 @@ var T={
   h_diet:'Feel better, one habit at a time.',s_diet:'Food, everyday precautions and gentle movement, together.',
   h_meds:'The right care, at the right time.',s_meds:'Understand each tablet. Keep the whole family in the loop.',
   h_clinic:'Prepared for every appointment.',s_clinic:'Your family’s health essentials, ready when they matter most.',
-  team:'Care is a team effort.',yourfam:'YOUR FAMILY',add:'Add family member',privacy:'Privacy & consent',
+  team:'Care is a team effort.',yourfam:'YOUR FAMILY',add:'Add family member',privacy:'Privacy & consent', 
   better:'Better, together.',manage:'Manage your family',
   numbers:'The numbers, in everyday words.',notwell:'Not feeling quite yourself?',notwell2:'Tell us how you feel, in your own words.',
   speak:'Speak a health update',send:'Send',
@@ -400,3 +400,5 @@ window.addEventListener('hashchange',function(){var h=location.hash.slice(1);if(
 document.documentElement.lang=S.lang;
 render();
 })();
+ 
+  
