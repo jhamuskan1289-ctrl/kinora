@@ -7,7 +7,6 @@ Kinora: one circle of care for the whole family. Understand reports, remember me
 
 Kinora is a family health companion for Indian households. It puts reports, medicines, diet, daily habits and an emergency ID for every family member in one calm place, in plain language, in English and हिन्दी.
 
-> Hackathon prototype. All people, readings and doctors are sample data. Kinora gives information, not a diagnosis.
 
 ## The problem
 
