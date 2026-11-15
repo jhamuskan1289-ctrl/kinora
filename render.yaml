@@ -1,0 +1,13 @@
+# Optional: lets Render create the service from this file (Blueprint).
+services:
+  - type: web
+    name: kinora
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: KINORA_SECRET
+        generateValue: true
+      - key: KINORA_DEMO
+        value: "1"
