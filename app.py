@@ -7,7 +7,7 @@ What it does
   * One-time sign-in codes (OTP) for phone or email
   * Session tokens (stored hashed, expire after 7 days)
   * One saved health record per family, stored in SQLite
-  * Serves the web app from the static/ folder
+  * Serves the web app (index.html, style.css, app.js and the photos) from this same folder
 
 The page and the API run on the same address, so no CORS setup is needed.
 """
@@ -34,7 +34,7 @@ OTP_MAX_TRIES = 5
 SESSION_TTL = 7 * 24 * 3600
 MAX_STATE_BYTES = 300_000
 
-app = Flask(__name__, static_folder="static", static_url_path="")
+app = Flask(__name__, static_folder=None)
 app.config["MAX_CONTENT_LENGTH"] = 1_000_000
 
 
@@ -257,9 +257,23 @@ def api_logout():
 
 
 # ---------- the web app ----------
+# Only plain web files are served (page, styles, script, pictures).
+# Python files, the database and config files are never exposed.
+WEB_FILE = re.compile(r"^[A-Za-z0-9_-]+\.(html|css|js|jpg|jpeg|png|svg|ico|webp)$")
+
+
 @app.get("/")
 def index():
-    resp = send_from_directory(app.static_folder, "index.html")
+    resp = send_from_directory(BASE_DIR, "index.html")
+    resp.headers["Cache-Control"] = "no-cache"
+    return resp
+
+
+@app.get("/<path:name>")
+def web_file(name):
+    if not WEB_FILE.fullmatch(name) or not os.path.isfile(os.path.join(BASE_DIR, name)):
+        return fail("Not found.", 404)
+    resp = send_from_directory(BASE_DIR, name)
     resp.headers["Cache-Control"] = "no-cache"
     return resp
 
